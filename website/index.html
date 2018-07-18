@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>sale_system</title>
+  <link href="https://fonts.googleapis.com/css?family=Bungee+Shade" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="sale_sys.css" />
+  <script type="text/javascript" src="sale_sys.js"></script>
+  <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+
+</head>
+<body onload="checkConnection()">
+
+  <div class="header">
+    <h1>Sale System</h1>
+  </div>
+
+  <div class="topnav">
+    <a id = "homeButton" style="display: none;" onclick="home()">Main</a>
+    <a id = "inventoryButton" style="display: none;" onclick="inventory()">Inventory</a>
+    <a id = "reportsButton" style="display: none;" onclick="reports()">Reports</a>
+    <a id = "logoutButton" style="display: none; float: right;" onclick="logout()">Logout</a>
+
+  </div>
+
+  <div class = "row" style="padding-left: 40px;padding-top: 20px;background-color: rgb(240, 250, 245); border: 2px solid rgb(240, 250, 245); border-radius: 0px 0px 10px 10px;">
+
+
+
+    <div id = "home-page" style="display: none; padding-right : 10px;">
+      <h2>Main content</h2>
+      <br>
+      <br>
+
+    </div>
+    <div id = "inventory-page" class="column middle" style="display: none; padding-right : 10px;">
+      <h2>Inventory</h2>
+      <br>
+      <br>
+      <div class="card" id = "items" onload = "getItems()" style="padding: auto;">
+
+      </div>
+        <form id="form1">
+
+            <input type="text" name="in1">
+            <input type="text" name="in2>">
+            <input type="button" value ="add" onclick="addItem()">
+        </form>
+    </div>
+    <div id = "login-page" style="padding-right : 10px;display: none;">
+      <form style="align-self: center;">
+        Username:
+        <input type="text" id="username"><br><br>
+        Password:
+        <input type="password" id="psw"><br><br>
+        <input type="button" value ="login" onclick="login()">
+      </form>
+      <br>
+      <br>
+    </div>
+    <div id = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
+      <h2>Report content</h2>
+      <br>
+      <br>
+
+    </div>
+
+
+  </div>
+
+  <br>
+  <p style="text-align: right;  color: rgb(240, 250, 245);line-height: 0.5;"> @sale_system (2018)</p>
+
+</body>
+</html>
