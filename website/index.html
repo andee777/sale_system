@@ -14,6 +14,7 @@
 
 </head>
 <body onload="checkConnection()">
+  <div id="wrap">
 
   <nav class="navbar navbar-dark" style="border: none; border-radius: 0; background-color: rgba(150, 150, 150, 0.5);">
     <div class="container-fluid">
@@ -31,11 +32,11 @@
   </nav>
 
   <div class="container-fluid bg-light ">
-    <div class="col-md-auto" id="home-page" style="display: none;">
+    <div class="col-md-7" id="home-page" style="display: none;">
       <h2>Main</h2>
     </div>
 
-    <div class="col-md-auto" id="inventory-page" style="display: none;">
+    <div class="col-md-7" id="inventory-page" style="display: none;">
       <h2>Inventory</h2>
 
       <div id="items" onload = "getItems()" style="padding: auto;"></div>
@@ -48,22 +49,23 @@
 
 
 
-    <div class="col-md-auto" id="reports-page" style="display: none;">
+    <div class="col-md-7" id="reports-page" style="display: none;">
       <h2>Report content</h2>
     </div>
 
-    <div class="col-md-auto" id="login-page" style="display: none;">
+    <div class="col-md-7" id="login-page" style="display: none;">
       <form style="align-self: center;">
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="psw"><br><br>
         <input type="button" value ="login" onclick="login()">
       </form>
     </div>
-    
+
     <div class="container position-absolute-right">
       <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
       <a id="foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a>
     </div>
+  </div>
   </div>
 
 </body>
