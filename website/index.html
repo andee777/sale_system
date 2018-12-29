@@ -11,17 +11,38 @@
 </head>
 <body onload="checkConnection()">
 
-  <div class="header">
-    <h1>Sale System</h1>
-  </div>
+  <nav class="navbar navbar-expand-sm navbar-dark text-primary" style="border: none; border-radius: 0; background-color:rgba(0, 0, 0, 0.5);">
+    <div class="container-fluid">
+      <div class="position-fixed-right">
+        <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
+        <a class="navbar-brand" href="https://github.com/andee777"><img id="lion_icon" src="./lion.png"></a>
+        <a class="navbar-brand" href="https://andee777.github.io/"><img id="git_icon" src="./777.JPG"></a>
+      </div>
 
-  <div class="topnav">
-    <a id = "homeButton" style="display: none;" onclick="home()">Main</a>
-    <a id = "inventoryButton" style="display: none;" onclick="inventory()">Inventory</a>
-    <a id = "reportsButton" style="display: none;" onclick="reports()">Reports</a>
-    <a id = "logoutButton" style="display: none; float: right;" onclick="logout()">Logout</a>
+      <button type="button" class="navbar-toggler position-fixed-left" data-toggle="collapse" data-target="#myNavbar" style="border: none; font-size:25px; background-color:rgba(255, 255, 255, 0);">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">p5.js</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="https://andee777.github.io/p5-flocking/">Flocking</a>
+              <a class="dropdown-item" href="https://andee777.github.io/p5-dla/">Diffusion Limited Aggregation (DLA)</a>
+            </div>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle text-light" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="#">Node.js</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="http://159.89.120.104/sale_sys">Sale System</a>
+              <a class="dropdown-item" href="http://159.89.120.104/demo">Test</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <div class = "row" style="padding-left: 40px;padding-top: 20px;background-color: rgb(240, 250, 245); border: 2px solid rgb(240, 250, 245); border-radius: 0px 0px 10px 10px;">
 
