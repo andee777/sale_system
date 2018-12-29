@@ -9,8 +9,8 @@ body {
 }
 
 #k_icon {
-  width: 40px;
-  height: 40px;
+  width: 20px;
+  height: 20px;
   animation-name: rot1;
   animation-duration: 9s;
   animation-timing-function: linear;
@@ -31,16 +31,6 @@ body {
 }
 #k_icon:hover {
   border: 2px solid black;
-}
-#git_icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 25px;
-  transform: scale(1.3, 1.3);
-}
-#git_icon:hover {
-  transform: scale(1.3, 1.3);
-  border: 2px solid rgb(203, 203, 203);
 }
 
 #foot {
