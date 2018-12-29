@@ -2,8 +2,7 @@ body {
   margin: 0px;
   padding: 0px;
   overflow: hidden;
-  background: url("./bg.jpg");
-  background-repeat:no-repeat;
+  background-color: white;
   width:100%;
   height:100%;
 }
@@ -44,11 +43,11 @@ body {
 }
 
 #foot {
-  text-align: right;
   color: rgb(240, 250, 245);
 }
 
 #foot:link {
+  text-align: right;
   text-decoration: none;
   color: white;
 }
