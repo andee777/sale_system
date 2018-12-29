@@ -21,18 +21,18 @@
         <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
         <a class="navbar-brand" href="https://github.com/andee777"><img id="lion_icon" src="./lion.png"></a>
       </div>
-      <ul class="nav">
 
-          <li class="nav-item"><a id="homeButton" class="nav-link" style="display: none;" onclick="home()">Home</a> </li>
-          <li class="nav-item"><a id="inventoryButton" class="nav-link" style="display: none;" onclick="inventory()">Inventory</a> </li>
-          <li class="nav-item"><a id="reportsButton" class="nav-link" style="display: none;" onclick="reports()">Reports</a></li>
-          <li class="nav-item"><a id="logoutButton" class="nav-link" style="display: none;" onclick="logout()">Logout</a></li>
+      <ul class="nav">
+          <li class="nav-item"><button class="btn btn-primary" id="homeButton" style="display: none;" onclick="home()">Home</a> </li>
+          <li class="nav-item"><button class="btn btn-primary" id="inventoryButton" style="display: none;" onclick="inventory()">Inventory</a> </li>
+          <li class="nav-item"><button class="btn btn-primary" id="reportsButton" style="display: none;" onclick="reports()">Reports</a></li>
+          <li class="nav-item"><button class="btn btn-primary" id="logoutButton" style="display: none;" onclick="logout()">Logout</a></li>
       </ul>
     </div>
   </nav>
 
   <div class="container-fluid bg-dark">
-    <div class="container-fluid bg-dark" id = "home-page" style="display: none; padding-right : 10px;">
+    <div class="container-fluid bg-light" id = "home-page" style="display: none; padding-right : 10px;">
       <h2>Main</h2>
       <br>
       <br>
@@ -50,7 +50,7 @@
       </form>
     </div>
 
-    <div class="container-fluid bg-dark" id = "login-page" style="padding-right : 10px;display: none;">
+    <div class="container-fluid bg-light" id = "login-page" style="padding-right : 10px;display: none;">
       <form style="align-self: center;">
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="psw"><br><br>
@@ -60,7 +60,7 @@
       <br>
     </div>
 
-    <div id class="container-fluid bg-dark" = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
+    <div id class="container-fluid bg-light" = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
       <h2>Report content</h2>
       <br>
       <br>
