@@ -1,3 +1,53 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow: hidden;
+}
+
+#wrap {
+  background: url("bg.jpg");
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position:center;
+  position:absolute;
+  width:100%;
+  height:100%;
+}
+
+#k_icon {
+  width: 40px;
+  height: 40px;
+  animation-name: rot1;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+#lion_icon {
+  width: 40px;
+  height: 40px;
+  transform: scale(1.6, 1.6);
+}
+
+@keyframes rot1 {
+  0%   {transform: rotate(0deg) scale(1.3, 1.3);}
+  33%  {transform: rotate(120deg) scale(1.3, 1.3);}
+  67%  {transform: rotate(240deg) scale(1.3, 1.3);}
+  100% {transform: rotate(360deg) scale(1.3, 1.3);}
+}
+#k_icon:hover {
+  border: 2px solid black;
+}
+#git_icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  transform: scale(1.3, 1.3);
+}
+#git_icon:hover {
+  transform: scale(1.3, 1.3);
+  border: 2px solid rgb(203, 203, 203);
+}
 
 /* Create three unequal columns that floats next to each other */
 .column {
