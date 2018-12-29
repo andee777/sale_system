@@ -11,65 +11,69 @@
 </head>
 <body onload="checkConnection()">
 
-  <div class="header">
-    <h1>Sale System</h1>
-  </div>
+  <nav class="navbar navbar-expand-sm navbar-dark text-primary" style="border: none; border-radius: 0; background-color:rgba(0, 0, 0, 0.5);">
+    <div class="container-fluid">
+      <div class="position-fixed-right">
+        <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
+        <a class="navbar-brand" href="https://github.com/andee777"><img id="lion_icon" src="./lion.png"></a>
+        <a class="navbar-brand" href="https://andee777.github.io/"><img id="git_icon" src="./777.JPG"></a>
+      </div>
 
-  <div class="topnav">
-    <a id = "homeButton" style="display: none;" onclick="home()">Main</a>
-    <a id = "inventoryButton" style="display: none;" onclick="inventory()">Inventory</a>
-    <a id = "reportsButton" style="display: none;" onclick="reports()">Reports</a>
-    <a id = "logoutButton" style="display: none; float: right;" onclick="logout()">Logout</a>
+      <button type="button" class="navbar-toggler position-fixed-left" data-toggle="collapse" data-target="#myNavbar" style="border: none; font-size:25px; background-color:rgba(255, 255, 255, 0);">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-  </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+          <li><a id="homeButton" class="nav-item" style="display: none;" onclick="home()"></a> </li>
+          <li><a id="inventoryButton" class="nav-item" style="display: none;" onclick="home()"></a> </li>
+          <li><a id="reportsButton" class="nav-item" style="display: none;" onclick="home()"></a> </li>
+          <li><a id="logoutButton" class="nav-item" style="display: none;" onclick="home()"></a> </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-  <div class = "row" style="padding-left: 40px;padding-top: 20px;background-color: rgb(240, 250, 245); border: 2px solid rgb(240, 250, 245); border-radius: 0px 0px 10px 10px;">
-
-
-
+  <div class="container-fluid">
     <div id = "home-page" style="display: none; padding-right : 10px;">
       <h2>Main content</h2>
       <br>
       <br>
-
     </div>
+
     <div id = "inventory-page" class="column middle" style="display: none; padding-right : 10px;">
       <h2>Inventory</h2>
       <br>
       <br>
-      <div class="card" id = "items" onload = "getItems()" style="padding: auto;">
-
-      </div>
-        <form id="form1">
-
-            <input type="text" name="in1">
-            <input type="text" name="in2>">
-            <input type="button" value ="add" onclick="addItem()">
-        </form>
+      <div class="card" id = "items" onload = "getItems()" style="padding: auto;"></div>
+      <form id="form1">
+        <input type="text" name="in1">
+        <input type="text" name="in2>">
+        <input type="button" value ="add" onclick="addItem()">
+      </form>
     </div>
+
     <div id = "login-page" style="padding-right : 10px;display: none;">
       <form style="align-self: center;">
-        Username:
-        <input type="text" id="username"><br><br>
-        Password:
-        <input type="password" id="psw"><br><br>
+        Username: <input type="text" id="username"><br><br>
+        Password: <input type="password" id="psw"><br><br>
         <input type="button" value ="login" onclick="login()">
       </form>
       <br>
       <br>
     </div>
+
     <div id = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
       <h2>Report content</h2>
       <br>
       <br>
-
     </div>
-
-
   </div>
 
   <br>
-  <p style="text-align: right;  color: rgb(240, 250, 245);line-height: 0.5;"> <a id= "foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a></p>
+  <p style="text-align: right;  color: rgb(240, 250, 245);line-height: 0.5;">
+    <a id= "foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a>
+  </p>
 
 </body>
 </html>
