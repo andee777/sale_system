@@ -22,29 +22,23 @@
         <a class="navbar-brand" href="https://github.com/andee777"><img id="lion_icon" src="./lion.png"></a>
       </div>
 
-      <button type="button" class="navbar-toggler position-fixed-left" data-toggle="collapse" data-target="#myNavbar" style="border: none; font-size:25px; background-color:rgba(255, 255, 255, 0);">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item"><a id="homeButton" class="nav-link" style="display: none;" onclick="home()">Home</a> </li>
           <li class="nav-item"><a id="inventoryButton" class="nav-link" style="display: none;" onclick="inventory()">Inventory</a> </li>
           <li class="nav-item"><a id="reportsButton" class="nav-link" style="display: none;" onclick="reports()">Reports</a></li>
           <li class="nav-item"><a id="logoutButton" class="nav-link" style="display: none;" onclick="logout()">Logout</a></li>
         </ul>
-      </div>
     </div>
   </nav>
 
   <div class="container-fluid bg-dark">
-    <div id = "home-page" style="display: none; padding-right : 10px;">
+    <div class="container-fluid bg-dark" id = "home-page" style="display: none; padding-right : 10px;">
       <h2>Main</h2>
       <br>
       <br>
     </div>
 
-    <div id = "inventory-page" class="column middle" style="display: none; padding-right : 10px;">
+    <div class="container-fluid bg-dark" id = "inventory-page" class="column middle" style="display: none; padding-right : 10px;">
       <h2>Inventory</h2>
       <br>
       <br>
@@ -56,7 +50,7 @@
       </form>
     </div>
 
-    <div id = "login-page" style="padding-right : 10px;display: none;">
+    <div class="container-fluid bg-dark" id = "login-page" style="padding-right : 10px;display: none;">
       <form style="align-self: center;">
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="psw"><br><br>
@@ -66,17 +60,15 @@
       <br>
     </div>
 
-    <div id = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
+    <div id class="container-fluid bg-dark" = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
       <h2>Report content</h2>
       <br>
       <br>
     </div>
+    <br>
+
   </div>
 
-  <br>
-  <p style="text-align: right;  color: rgb(240, 250, 245);line-height: 0.5;">
-    <a id= "foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a>
-  </p>
-
 </body>
+<footer><a id= "foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a></footer>
 </html>
