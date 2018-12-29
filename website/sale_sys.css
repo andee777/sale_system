@@ -43,7 +43,7 @@ body {
 }
 
 #foot {
-  color: rgb(240, 250, 245);
+  color: rgb(0, 250, 245);
 }
 
 #foot:link {
@@ -54,7 +54,7 @@ body {
 
 #foot:visited {
   text-decoration: none;
-  color: LightGray;
+  color: blue;
 }
 
 #foot:hover {
