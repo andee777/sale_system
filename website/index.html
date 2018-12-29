@@ -15,7 +15,7 @@
 </head>
 <body onload="checkConnection()">
 
-  <nav class="navbar navbar-expand-sm navbar-dark" style="border: none; border-radius: 0; background-color: rgba(0, 0, 0, 0.5);">
+  <nav class="navbar navbar-dark" style="border: none; border-radius: 0; background-color: rgba(0, 0, 0, 0.5);">
     <div class="container-fluid">
       <div class="position-fixed-right">
         <a class="navbar-brand" href="http://159.89.120.104/"><img id="k_icon" src="./k.png" class="rounded-circle"></a>
@@ -31,14 +31,14 @@
     </div>
   </nav>
 
-  <div class="container-fluid bg-dark">
-    <div class="container-fluid bg-light" id = "home-page" style="display: none; padding-right : 10px;">
+  <div class="container-fluid bg-light">
+    <div class="container-fluid" id = "home-page" style="display: none;">
       <h2>Main</h2>
       <br>
       <br>
     </div>
 
-    <div class="container-fluid bg-light" id = "inventory-page" class="column middle" style="display: none; padding-right : 10px;">
+    <div class="container-fluid" id = "inventory-page" style="display: none;">
       <h2>Inventory</h2>
       <br>
       <br>
@@ -50,7 +50,7 @@
       </form>
     </div>
 
-    <div class="container-fluid bg-light" id = "login-page" style="padding-right : 10px;display: none;">
+    <div class="container-fluid" id = "login-page" style="display: none;">
       <form style="align-self: center;">
         Username: <input type="text" id="username"><br><br>
         Password: <input type="password" id="psw"><br><br>
@@ -60,15 +60,16 @@
       <br>
     </div>
 
-    <div id class="container-fluid bg-light" = "reports-page" class="column middle" style="display: none; padding-right : 10px;">
+    <div class="container-fluid" id= "reports-page" style="display: none;">
       <h2>Report content</h2>
       <br>
       <br>
     </div>
     <br>
-
   </div>
 
 </body>
+
 <footer><a id= "foot" href="https://andee777.github.io/">Ⓒ master_k (2018)</a></footer>
+
 </html>
