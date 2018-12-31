@@ -1,84 +1,10 @@
-body {
-  font-size: .875rem;
+#lion_icon {
+  width: 30px;
+  height: 30px;
+  transform: scale(1.6, 1.6);
 }
 
-.feather {
-  width: 16px;
-  height: 16px;
-  vertical-align: text-bottom;
-}
-
-/*
- * Sidebar
- */
-
-.sidebar {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 1; /* Behind the navbar */
-  padding: 60px 0 0; /* Height of navbar */
-  box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
-}
-
-.sidebar-sticky {
-  position: relative;
-  top: 0;
-  height: calc(100vh - 48px);
-  padding-top: .5rem;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
-
-@supports ((position: -webkit-sticky) or (position: sticky)) {
-  .sidebar-sticky {
-    position: -webkit-sticky;
-    position: sticky;
-  }
-}
-
-.sidebar .nav-link {
-  font-weight: 500;
-  color: #333;
-}
-
-.sidebar .nav-link .feather {
-  margin-right: 4px;
-  color: #999;
-}
-
-.sidebar .nav-link.active {
-  color: #007bff;
-}
-
-.sidebar .nav-link:hover .feather,
-.sidebar .nav-link.active .feather {
-  color: inherit;
-}
-
-.sidebar-heading {
-  font-size: .75rem;
-  text-transform: uppercase;
-}
-
-/*
- * Content
- */
-
-[role="main"] {
-  padding-top: 133px; /* Space for fixed navbar */
-}
-
-@media (min-width: 768px) {
-  [role="main"] {
-    padding-top: 60px; /* Space for fixed navbar */
-  }
-}
-/*
- * Navbar
- */
-
+/*Navbar*/
 .navbar-brand {
   padding-top: .75rem;
   padding-bottom: .75rem;
@@ -101,12 +27,72 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
-#lion_icon {
-  width: 30px;
-  height: 30px;
-  transform: scale(1.6, 1.6);
+body {
+  font-size: .875rem;
 }
 
+#sidebar1 {
+  height: 100%;
+
+}
+
+#sidebar1-container {
+  display: none;
+
+}
+@media (min-width: 576px) {
+  #sidebar1 {
+    height: 100vh;
+  }
+  #sidebar1-container {
+    border-right: 1px solid darkGrey;
+  }
+}
+.feather {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+}
+
+/*login page*/
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 10% 15px;
+  margin: auto;
+  height: 100vh;
+}
+.form-signin .checkbox {
+  font-weight: 400;
+}
+.form-signin .form-control {
+  position: relative;
+  box-sizing: border-box;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* footer */
+@keyframes rot1 {
+  0%   {transform: rotate(0deg) scale(1.3, 1.3);}
+  33%  {transform: rotate(120deg) scale(1.3, 1.3);}
+  67%  {transform: rotate(240deg) scale(1.3, 1.3);}
+  100% {transform: rotate(360deg) scale(1.3, 1.3);}
+}
 #k_icon {
   width: 20px;
   height: 20px;
@@ -115,14 +101,6 @@ body {
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
-
-@keyframes rot1 {
-  0%   {transform: rotate(0deg) scale(1.3, 1.3);}
-  33%  {transform: rotate(120deg) scale(1.3, 1.3);}
-  67%  {transform: rotate(240deg) scale(1.3, 1.3);}
-  100% {transform: rotate(360deg) scale(1.3, 1.3);}
-}
-
 #foot {
   color: rgb(0, 250, 245);
 

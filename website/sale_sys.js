@@ -1,73 +1,32 @@
-function home() {
-  document.getElementById("home-page").style.display = "block";
-  document.getElementById("inventory-page").style.display = "none";
-  document.getElementById("reports-page").style.display = "none";
-  document.getElementById("login-page").style.display = "none";
-
-
-}
-function inventory() {
-
-  document.getElementById("home-page").style.display = "none";
-  document.getElementById("inventory-page").style.display = "block";
-  document.getElementById("reports-page").style.display = "none";
-  document.getElementById("login-page").style.display = "none";
-
-}
-function reports() {
-
-  document.getElementById("home-page").style.display = "none";
-  document.getElementById("inventory-page").style.display = "none";
-  document.getElementById("reports-page").style.display = "block";
-  document.getElementById("login-page").style.display = "none";
-
-}
-function logout() {
-  document.getElementById("home-page").style.display = "none";
-  document.getElementById("inventory-page").style.display = "none";
-  document.getElementById("reports-page").style.display = "none";
-  document.getElementById("login-page").style.display = "block";
-  document.getElementById("reportsButton").style.display = "none";
-  document.getElementById("inventoryButton").style.display = "none";
-  document.getElementById("homeButton").style.display = "none";
-  document.getElementById("logoutButton").style.display = "none";
-  var xhttp = new XMLHttpRequest();
-  var address = "logout";
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= xhttp.responseText;
-  console.log(res);
-}
 function checkConnection() {
   var xhttp = new XMLHttpRequest();
   var address = "checkConnection";
   xhttp.open("GET", address, false);
   xhttp.send();
   var res= xhttp.responseText;
-  document.getElementById("login-page").style.display = "none";
-
-  if (res == "true") {
+  //document.getElementById("login-page").style.display = "none";
+  if (res == "true") {          //admin
+    dashboard();
+    document.getElementsByTagName('nav')[0].style.display = "";
+    document.getElementById("sidebar1-container").style.display = "inline";
+  }
+  else if(res == "false") {     //client
     home();
-    document.getElementById("inventoryButton").style.display = "inline";
-    document.getElementById("homeButton").style.display = "inline";
-    document.getElementById("logoutButton").style.display = "inline";
+    document.getElementsByTagName('nav')[0].style.display = "";
 
   }
-  else if(res == "false") {
-    document.getElementById("homeButton").style.display = "inline";
-    document.getElementById("logoutButton").style.display = "inline";
-
-    home();
-  }
-  else {
-    console.log(res);
+  else {                        //not logged in
+    document.getElementById("dashboard").style.display = "none";
+    document.getElementById("inventory-page").style.display = "none";
+    document.getElementById("reports-page").style.display = "none";
     document.getElementById("login-page").style.display = "inline";
-
+    document.getElementById("home-page").style.display = "none";
+    document.getElementsByTagName('nav')[0].style.display = "none";
+    document.getElementById("sidebar1-container").style.display = "none";
   }
-
 }
-function login() {
 
+function login() {
   var username = document.getElementById("username").value;
   var psw = document.getElementById("psw").value;
   var xhttp = new XMLHttpRequest();
@@ -75,23 +34,60 @@ function login() {
   xhttp.open("GET", address, false);
   xhttp.send();
   var res= xhttp.responseText;
-  if (res == "true") {
-    home();
-    document.getElementById("reportsButton").style.display = "inline";
-    document.getElementById("inventoryButton").style.display = "inline";
-    document.getElementById("homeButton").style.display = "inline";
-    document.getElementById("logoutButton").style.display = "inline";
+  if (res) {
+    document.getElementById("login-page").style.display = "none"
+  }
+  else { console.log(res); }
+}
 
-  }
-  else if(res == "false") {
-    document.getElementById("homeButton").style.display = "inline";
-    document.getElementById("logoutButton").style.display = "inline";
+function logout() {
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("inventory-page").style.display = "none";
+  document.getElementById("reports-page").style.display = "none";
+  document.getElementById("login-page").style.display = "block";
+  document.getElementById("home-page").style.display = "none";
 
-    home();
-  }
-  else {
-    console.log(res);
-  }
+  document.getElementsByTagName('nav')[0].style.display = "none";
+  document.getElementById("sidebar1-container").style.display = "none";
+  var xhttp = new XMLHttpRequest();
+  var address = "logout";
+  xhttp.open("GET", address, false);
+  xhttp.send();
+  var res= xhttp.responseText;
+  console.log(res);
+}
+
+function dashboard() {
+  document.getElementById("dashboard").style.display = "block";
+  document.getElementById("inventory-page").style.display = "none";
+  document.getElementById("reports-page").style.display = "none";
+  document.getElementById("login-page").style.display = "none"
+  document.getElementById("home-page").style.display = "none";
+}
+
+function home() {
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("home-page").style.display = "block";
+  document.getElementById("inventory-page").style.display = "none";
+  document.getElementById("reports-page").style.display = "none";
+  document.getElementById("login-page").style.display = "none";
+}
+
+function inventory() {
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("inventory-page").style.display = "block";
+  document.getElementById("reports-page").style.display = "none";
+  document.getElementById("login-page").style.display = "none";
+  document.getElementById("home-page").style.display = "none";
+
+}
+
+function reports() {
+  document.getElementById("dashboard").style.display = "none";
+  document.getElementById("inventory-page").style.display = "none";
+  document.getElementById("reports-page").style.display = "block";
+  document.getElementById("login-page").style.display = "none";
+  document.getElementById("home-page").style.display = "none";
 
 }
 
@@ -103,30 +99,22 @@ function getItems() {
   xhttp.send();
   var res= (xhttp.responseText);
   items = JSON.parse(res);
-  //console.log(JSON.stringify(table));
-
+  console.log(JSON.stringify(items));
   //displaying table
-  var str = "<table>";
+  var str = "<table class=\"table table-striped table-sm\">";
   str += "<tr><b><td><b>item</b> </td><td><b> qty</b> </td></b></tr>";
-
   for( var x in items) {
-
     str += "<tr><td>" + x + "</td><td>" + items[x] + "</td></tr>";
-
   }
   // str += "<tr><td><input type=\"text\" id=\"itemName\"></td>"
   //         + "<td><input type=\"text\" id=\"itemAmt\"></td>"
   //         + "<td><input type=\"button\" value =\"add\" style=\"display: inline;\" onclick=\"addItem()\"></td></tr>";
   str += "</table>" ;
   document.getElementById("items").innerHTML = str;
-
   //  document.getElementById("items").innerHTML = JSON.stringify(items);
-
 }
 
-
 function addItem() {
-
   var frm = document.getElementById("form1");
   console.log(name);
   var xhttp = new XMLHttpRequest();
@@ -136,5 +124,4 @@ function addItem() {
   var res= xhttp.responseText;
   console.log(res);
   frm.reset();
-
 }
