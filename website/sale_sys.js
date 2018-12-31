@@ -1,5 +1,5 @@
 function home() {
-  document.getElementById("home-page").style.display = "inline";
+  document.getElementById("home-page").style.display = "block";
   document.getElementById("inventory-page").style.display = "none";
   document.getElementById("reports-page").style.display = "none";
   document.getElementById("login-page").style.display = "none";
@@ -9,7 +9,7 @@ function home() {
 function inventory() {
 
   document.getElementById("home-page").style.display = "none";
-  document.getElementById("inventory-page").style.display = "inline";
+  document.getElementById("inventory-page").style.display = "block";
   document.getElementById("reports-page").style.display = "none";
   document.getElementById("login-page").style.display = "none";
 
@@ -18,7 +18,7 @@ function reports() {
 
   document.getElementById("home-page").style.display = "none";
   document.getElementById("inventory-page").style.display = "none";
-  document.getElementById("reports-page").style.display = "inline";
+  document.getElementById("reports-page").style.display = "block";
   document.getElementById("login-page").style.display = "none";
 
 }
@@ -26,7 +26,7 @@ function logout() {
   document.getElementById("home-page").style.display = "none";
   document.getElementById("inventory-page").style.display = "none";
   document.getElementById("reports-page").style.display = "none";
-  document.getElementById("login-page").style.display = "inline";
+  document.getElementById("login-page").style.display = "block";
   document.getElementById("reportsButton").style.display = "none";
   document.getElementById("inventoryButton").style.display = "none";
   document.getElementById("homeButton").style.display = "none";
@@ -47,8 +47,7 @@ function checkConnection() {
   document.getElementById("login-page").style.display = "none";
 
   if (res == "true") {
-    inventory();
-    document.getElementById("reportsButton").style.display = "inline";
+    home();
     document.getElementById("inventoryButton").style.display = "inline";
     document.getElementById("homeButton").style.display = "inline";
     document.getElementById("logoutButton").style.display = "inline";
@@ -77,7 +76,7 @@ function login() {
   xhttp.send();
   var res= xhttp.responseText;
   if (res == "true") {
-    inventory();
+    home();
     document.getElementById("reportsButton").style.display = "inline";
     document.getElementById("inventoryButton").style.display = "inline";
     document.getElementById("homeButton").style.display = "inline";
