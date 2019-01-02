@@ -1,5 +1,5 @@
 async function checkConnection() {
-  let response = await fetch('/checkConnection');
+  let response = await fetch('sale_sys/checkConnection');
   let res = await response.json();
   items = JSON.parse(JSON.stringify(res));
   //document.getElementById("login-page").style.display = "none";
@@ -92,7 +92,7 @@ function reports() {
 
 async function getItems() {
   var items;
-  let response = await fetch('/items');
+  let response = await fetch('sale_sys/items');
   let res = await response.json();
   items = JSON.parse(JSON.stringify(res));
   //console.log(JSON.stringify(items));
