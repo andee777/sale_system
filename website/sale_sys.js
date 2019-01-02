@@ -1,16 +1,15 @@
-function checkConnection() {
-  var xhttp = new XMLHttpRequest();
-  var address = "checkConnection";
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= xhttp.responseText;
+async function checkConnection() {
+  let response = await fetch('/checkConnection');
+  let res = await response.json();
+  items = JSON.parse(JSON.stringify(res));
   //document.getElementById("login-page").style.display = "none";
-  if (res == "true") {          //admin
+  console.log(res)
+  if (res == true) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
     document.getElementById("sidebar1-container").style.display = "inline";
   }
-  else if(res == "false") {     //client
+  else if(res == false) {     //client
     home();
     document.getElementsByTagName('nav')[0].style.display = "";
 
@@ -91,15 +90,12 @@ function reports() {
 
 }
 
-function getItems() {
+async function getItems() {
   var items;
-  var xhttp = new XMLHttpRequest();
-  var address = "/items";
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= (xhttp.responseText);
-  items = JSON.parse(res);
-  console.log(JSON.stringify(items));
+  let response = await fetch('/items');
+  let res = await response.json();
+  items = JSON.parse(JSON.stringify(res));
+  //console.log(JSON.stringify(items));
   //displaying table
   var str = "<table class=\"table table-striped table-sm\">";
   str += "<tr><b><td><b>item</b> </td><td><b> qty</b> </td></b></tr>";
@@ -124,4 +120,5 @@ function addItem() {
   var res= xhttp.responseText;
   console.log(res);
   frm.reset();
+  getItems();
 }

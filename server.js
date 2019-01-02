@@ -26,19 +26,19 @@ app.listen(port, (err) => {
 app.use(express.static('website'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+
 app.get('/checkConnection', checkConnection);
 function checkConnection(req, res) {
     if(connections[req.ip]) {
       console.log("reloaded");
-
       res.send(users[connections[req.ip].user].admin);
     }
     else {
       console.log(connections);
       res.send("not in yet");
     }
-
 }
+
 app.get('/logout', logout);
 function logout(req, res) {
     console.log("logging out");
@@ -46,6 +46,7 @@ function logout(req, res) {
     console.log(connections);
     res.send("logged out");
 }
+
 app.get('/login/:username/:password', login);
 function login(req, res) {
     if(users[req.params.username]) {
@@ -57,7 +58,6 @@ function login(req, res) {
         function finished(err) {
           console.log(connections);
         }
-
       }
       else {
         res.send("password incorrect");
@@ -65,27 +65,23 @@ function login(req, res) {
     }
     else {
       console.log("no such user!")
-
       res.send("no such user!")
     }
-
-
 }
+
 app.get('/addItem/:itemName/:amount', addItem);
 function addItem(req, res) {
-
     items[req.params.itemName] = req.params.amount;
     fs.writeFile('./items.json', JSON.stringify(items), finished);
     function finished(err) {
       console.log('all set. finished writing to table.json');
     }
     res.send("added");
-
 }
+
 app.get('/items', getItems);
 function getItems(req, res) {
-
-    //console.log(items);
+    console.log(items);
     res.send(items);
 
 }
