@@ -71,7 +71,7 @@
               async function getItems() {
                 var items;
                 let address = window.location.href + 'items';
-                console.log(window.location);
+                console.log(address);
                 let response = await fetch(address);
                 let res = await response;
                 items = JSON.parse(JSON.stringify(res));
