@@ -9,7 +9,7 @@ async function checkConnection() {
     document.getElementsByTagName('nav')[0].style.display = "";
     document.getElementById("sidebar1-container").style.display = "inline";
   }
-  else if(res.text() == "false") {     //client
+  else if(res == "false") {     //client
     home();
     document.getElementsByTagName('nav')[0].style.display = "";
 
