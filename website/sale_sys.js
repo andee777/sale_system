@@ -2,7 +2,7 @@ async function checkConnection() {
   let address = window.location.href + 'checkConnection';
   console.log(address);
   let response = await fetch(address);
-  let res = await response.json();
+  let res = await response;
   if (res == true) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
