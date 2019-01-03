@@ -75,19 +75,15 @@
                 let response = await fetch(address);
                 let res = await response;
                 items = JSON.parse(JSON.stringify(res));
-                //console.log(JSON.stringify(items));
+                console.log(JSON.stringify(items));
                 //displaying table
                 var str = "<table class=\"table table-striped table-sm\">";
                 str += "<tr><b><td><b>item</b> </td><td><b> qty</b> </td></b></tr>";
                 for( var x in items) {
                   str += "<tr><td>" + x + "</td><td>" + items[x] + "</td></tr>";
                 }
-                // str += "<tr><td><input type=\"text\" id=\"itemName\"></td>"
-                //         + "<td><input type=\"text\" id=\"itemAmt\"></td>"
-                //         + "<td><input type=\"button\" value =\"add\" style=\"display: inline;\" onclick=\"addItem()\"></td></tr>";
                 str += "</table>" ;
                 document.getElementById("items").innerHTML = str;
-                //  document.getElementById("items").innerHTML = JSON.stringify(items);
               }
             </script>
           <form id="form1">
