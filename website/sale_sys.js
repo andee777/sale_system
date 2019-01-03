@@ -24,21 +24,20 @@ async function checkConnection() {
   }
 }
 
-function login() {
+async function login() {
   var username = document.getElementById("username").value;
   var psw = document.getElementById("psw").value;
-  var xhttp = new XMLHttpRequest();
-  var address = "login/" + username + "/" + psw;
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= xhttp.responseText;
+  let address = window.location.href + 'login/' + username + "/" + psw;
+  console.log(address);
+  let response = await fetch(address);
+  let res = await response;
   if (res) {
     document.getElementById("login-page").style.display = "none"
   }
   else { console.log(res); }
 }
 
-function logout() {
+async function logout() {
   document.getElementById("dashboard").style.display = "none";
   document.getElementById("inventory-page").style.display = "none";
   document.getElementById("reports-page").style.display = "none";
@@ -47,11 +46,10 @@ function logout() {
 
   document.getElementsByTagName('nav')[0].style.display = "none";
   document.getElementById("sidebar1-container").style.display = "none";
-  var xhttp = new XMLHttpRequest();
-  var address = "logout";
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= xhttp.responseText;
+  let address = window.location.href + 'logout';
+  console.log(address);
+  let response = await fetch(address);
+  let res = await response;
   console.log(res);
 }
 
@@ -110,14 +108,13 @@ async function getItems() {
   //  document.getElementById("items").innerHTML = JSON.stringify(items);
 }
 
-function addItem() {
+async function addItem() {
   var frm = document.getElementById("form1");
   console.log(name);
-  var xhttp = new XMLHttpRequest();
-  var address = "addItem/" + frm.elements[0].value + "/" + frm.elements[1].value;
-  xhttp.open("GET", address, false);
-  xhttp.send();
-  var res= xhttp.responseText;
+  let address = window.location.href + "addItem/" + frm.elements[0].value + "/" + frm.elements[1].value;
+  console.log(address);
+  let response = await fetch(address);
+  let res = await response;
   console.log(res);
   frm.reset();
   getItems();
