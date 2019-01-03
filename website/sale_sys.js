@@ -92,7 +92,9 @@ function reports() {
 
 async function getItems() {
   var items;
-  let response = await fetch('sale_sys/items');
+  let address = window.location.href + 'items';
+  console.log(window.location);
+  let response = await fetch(address);
   let res = await response.json();
   items = JSON.parse(JSON.stringify(res));
   //console.log(JSON.stringify(items));
