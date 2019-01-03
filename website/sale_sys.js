@@ -2,6 +2,7 @@ async function checkConnection() {
   let address = window.location.href + 'checkConnection';
   let response = await fetch(address);
   let res = await response;
+  console.log(address);
   console.log(res);
   if (res.body == true) {          //admin
     dashboard();
@@ -31,7 +32,7 @@ async function login() {
   console.log(address);
   let response = await fetch(address);
   let res = await response;
-  if (res) {
+  if (res.status == "200") {
     document.getElementById("login-page").style.display = "none";
     checkConnection();
   }
