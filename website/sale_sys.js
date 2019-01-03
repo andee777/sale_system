@@ -32,7 +32,8 @@ async function login() {
   let response = await fetch(address);
   let res = await response;
   if (res) {
-    document.getElementById("login-page").style.display = "none"
+    document.getElementById("login-page").style.display = "none";
+    checkConnection();
   }
   else { console.log(res); }
 }
