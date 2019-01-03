@@ -29,14 +29,15 @@ async function login() {
   var username = document.getElementById("username").value;
   var psw = document.getElementById("psw").value;
   let address = window.location.href + 'login/' + username + "/" + psw;
-  console.log(address);
   let response = await fetch(address);
   let res = await response;
+  console.log(address);
+  console.log(res);
   if (res.status == "200") {
     document.getElementById("login-page").style.display = "none";
     checkConnection();
   }
-  else { console.log(res); }
+  else { console.log(XX); }
 }
 
 async function logout() {
