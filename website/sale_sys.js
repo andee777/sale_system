@@ -4,12 +4,12 @@ async function checkConnection() {
   let res = await response.text();
   console.log(address);
   console.log(res);
-  if (res) {          //admin
+  if (res == true) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
     document.getElementById("sidebar1-container").style.display = "inline";
   }
-  else if(res == "false") {     //client
+  else if(res == false) {     //client
     home();
     document.getElementsByTagName('nav')[0].style.display = "";
 
