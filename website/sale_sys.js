@@ -4,7 +4,7 @@ async function checkConnection() {
   let res = await response.text();
   console.log(address);
   console.log(res);
-  if (res.text()) {          //admin
+  if (res) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
     document.getElementById("sidebar1-container").style.display = "inline";
