@@ -1,5 +1,7 @@
 async function checkConnection() {
-  let response = await fetch('/checkConnection');
+  let address = window.location.href + 'checkConnection';
+  console.log(window.location);
+  let response = await fetch(address);
   let res = await response.json();
   items = JSON.parse(JSON.stringify(res));
   //document.getElementById("login-page").style.display = "none";
