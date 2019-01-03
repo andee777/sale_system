@@ -1,9 +1,9 @@
 async function checkConnection() {
   let address = window.location.href + 'checkConnection';
   let response = await fetch(address);
-  let res = await response;
+  let res = await response.text();
   console.log(address);
-  alert(res);
+  console.log(res);
   if (res.text()) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
@@ -30,10 +30,10 @@ async function login() {
   var psw = document.getElementById("psw").value;
   let address = window.location.href + 'login/' + username + "/" + psw;
   let response = await fetch(address);
-  let res = await response;
+  let res = await response.text();
   console.log(address);
   console.log(res);
-  if (res.status == "200") {
+  if (res) {
     document.getElementById("login-page").style.display = "none";
     checkConnection();
   }
@@ -52,7 +52,7 @@ async function logout() {
   let address = window.location.href + 'logout';
   console.log(address);
   let response = await fetch(address);
-  let res = await response;
+  let res = await response.text();
   console.log(res);
 }
 
@@ -117,7 +117,7 @@ async function addItem() {
   let address = window.location.href + "addItem/" + frm.elements[0].value + "/" + frm.elements[1].value;
   console.log(address);
   let response = await fetch(address);
-  let res = await response;
+  let res = await response.text();
   console.log(res);
   frm.reset();
   getItems();
