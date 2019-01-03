@@ -1,8 +1,8 @@
 async function checkConnection() {
   let address = window.location.href + 'checkConnection';
-  console.log(address);
   let response = await fetch(address);
   let res = await response;
+  console.log(res);
   if (res == true) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
