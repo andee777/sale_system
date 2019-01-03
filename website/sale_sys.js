@@ -3,7 +3,7 @@ async function checkConnection() {
   let response = await fetch(address);
   let res = await response;
   console.log(address);
-  alert(result);
+  alert(res);
   if (res.text()) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
