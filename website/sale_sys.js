@@ -3,12 +3,12 @@ async function checkConnection() {
   let response = await fetch(address);
   let res = await response;
   console.log(res);
-  if (res == true) {          //admin
+  if (res.body == true) {          //admin
     dashboard();
     document.getElementsByTagName('nav')[0].style.display = "";
     document.getElementById("sidebar1-container").style.display = "inline";
   }
-  else if(res == false) {     //client
+  else if(res.body == false) {     //client
     home();
     document.getElementsByTagName('nav')[0].style.display = "";
 
