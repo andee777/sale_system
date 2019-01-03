@@ -1,10 +1,7 @@
 async function checkConnection() {
   let address = window.location.href + 'checkConnection';
-  console.log(window.location);
   let response = await fetch(address);
   let res = await response.json();
-  items = JSON.parse(JSON.stringify(res));
-  //document.getElementById("login-page").style.display = "none";
   console.log(res)
   if (res == true) {          //admin
     dashboard();
@@ -95,7 +92,6 @@ function reports() {
 async function getItems() {
   var items;
   let address = window.location.href + 'items';
-  console.log(window.location);
   let response = await fetch(address);
   let res = await response.json();
   items = JSON.parse(JSON.stringify(res));
